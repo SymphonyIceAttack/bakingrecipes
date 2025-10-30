@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm } from "@tanstack/react-form";
-import { zodValidator } from "@tanstack/zod-form-adapter";
 import { Plus, X } from "lucide-react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -64,7 +63,7 @@ export function RecipeForm({
   mode = "create",
   onSubmit,
 }: RecipeFormProps) {
-  const form = useForm<RecipeFormData>({
+  const form = useForm({
     defaultValues: {
       name: initialValues?.name || "",
       description: initialValues?.description || "",
@@ -75,7 +74,6 @@ export function RecipeForm({
       ingredients: initialValues?.ingredients || [{ name: "", weight: 0 }], // Changed to object structure
       instructions: initialValues?.instructions || [""],
     },
-    validatorAdapter: zodValidator(),
     onSubmit: async ({ value }) => {
       const recipe = {
         ...value,
