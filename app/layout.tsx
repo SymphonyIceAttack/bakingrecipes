@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Baking Recipes Collection",
-  description: "auto-calculate Baking Recipes",
+  title: "Baking Calculator: Recipe Scaling, Costing & Ingredient Conversion",
+  description:
+    "Tired of underpricing? Use our ultimate online baking calculator. Easily track ingredient costs, factor in overhead, and set profitable prices for all your cakes, cookies, and pastries!",
 };
 
 export default function RootLayout({
