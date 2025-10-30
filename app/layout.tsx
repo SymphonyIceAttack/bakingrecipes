@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Baking Recipe Collection",
-  description: "auto-calculate Baking Recipe",
+  title: "Baking Recipes Collection",
+  description: "auto-calculate Baking Recipes",
 };
 
 export default function RootLayout({
