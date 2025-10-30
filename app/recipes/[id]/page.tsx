@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Clock, Thermometer, Users } from "lucide-react";
+import { ArrowLeft, Calculator, Clock, Thermometer, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -128,24 +128,40 @@ export default function RecipeDetailPage() {
             </Card>
 
             {/* Serving Calculator */}
-            <Card className="mt-6">
-              <CardHeader>
-                <CardTitle className="text-lg">调整份数</CardTitle>
+            <Card className="mt-6 border-2 border-primary/20 shadow-lg">
+              <CardHeader className="bg-primary/5">
+                <div className="flex items-center gap-2">
+                  <Calculator className="h-5 w-5 text-primary" />
+                  <CardTitle className="text-lg">Baking Calculator</CardTitle>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Automatically scale ingredient weights
+                </p>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pt-6">
                 <div className="space-y-2">
-                  <Label htmlFor="target-servings">目标份数</Label>
+                  <Label
+                    htmlFor="target-servings"
+                    className="text-base font-semibold"
+                  >
+                    Target Servings
+                  </Label>
                   <Input
                     id="target-servings"
                     type="number"
                     min="1"
                     value={targetServings}
                     onChange={(e) => setTargetServings(Number(e.target.value))}
-                    className="text-lg font-semibold"
+                    className="text-lg font-semibold h-12"
                   />
-                  <p className="text-sm text-muted-foreground">
-                    缩放比例: {scalingRatio.toFixed(2)}x
-                  </p>
+                  <div className="pt-2 px-3 py-2 bg-muted rounded-md">
+                    <p className="text-sm text-muted-foreground">
+                      Scaling ratio:
+                    </p>
+                    <p className="text-2xl font-bold text-primary">
+                      {scalingRatio.toFixed(2)}x
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -155,7 +171,12 @@ export default function RecipeDetailPage() {
           <div className="lg:col-span-2 space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>原料 (按 {targetServings} 份计算)</CardTitle>
+                <CardTitle>
+                  Ingredients (Calculated for {targetServings} servings)
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  All weights automatically adjusted in grams
+                </p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">

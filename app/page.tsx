@@ -1,4 +1,4 @@
-import { BookOpen, ChefHat, Clock } from "lucide-react";
+import { BookOpen, Calculator, ChefHat, Clock } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -13,11 +13,11 @@ export default function Home() {
               <ChefHat className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-balance mb-6 text-foreground">
-              Your Personal Baking Recipe Collection
+              Baking Calculator & Recipe Manager
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground text-pretty mb-8 leading-relaxed">
-              Organize, save, and perfect your favorite baking recipes all in
-              one beautiful place
+              Automatically scale ingredient weights for any serving size.
+              Perfect measurements, perfect results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-lg px-8">
@@ -40,9 +40,21 @@ export default function Home() {
       <section className="py-20 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-balance">
-            Everything you need for your baking journey
+            Everything you need for perfect baking
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                <Calculator className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                Smart Baking Calculator
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Automatically calculate ingredient weights in grams for any
+                serving size. Scale recipes up or down with precision.
+              </p>
+            </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <BookOpen className="w-7 h-7 text-primary" />
@@ -65,16 +77,6 @@ export default function Home() {
                 perfect results every time
               </p>
             </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
-                <ChefHat className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Perfect Your Craft</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Build your personal collection and refine your recipes as you
-                grow as a baker
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -83,11 +85,11 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            Ready to start your recipe collection?
+            Ready to bake with perfect measurements?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 text-pretty">
-            Begin organizing your baking recipes today and never lose track of
-            your favorites again
+            Start using the baking calculator today and never worry about
+            scaling recipes again
           </p>
           <Button asChild size="lg" className="text-lg px-8">
             <Link href="/collection">Get Started</Link>

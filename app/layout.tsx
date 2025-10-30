@@ -1,22 +1,56 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import type React from "react";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Baking Calculator: Recipe Scaling, Costing & Ingredient Conversion",
+  title: {
+    default:
+      "Baking Calculator & Recipe Manager - Scale Your Recipes Perfectly",
+    template: "%s | Baking Calculator",
+  },
   description:
-    "Tired of underpricing? Use our ultimate online baking calculator. Easily track ingredient costs, factor in overhead, and set profitable prices for all your cakes, cookies, and pastries!",
+    "Professional baking calculator that automatically scales ingredient weights based on serving sizes. Manage your baking recipes with precision - adjust servings and get instant gram measurements for perfect results every time.",
+  keywords: [
+    "baking calculator",
+    "recipe scaler",
+    "ingredient calculator",
+    "baking recipes",
+    "recipe management",
+    "serving size calculator",
+    "gram calculator",
+    "cooking",
+  ],
+  authors: [{ name: "Baking Calculator" }],
+  creator: "Baking Calculator",
+  publisher: "Baking Calculator",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://www.bakingrecipes.top"),
+  openGraph: {
+    title: "Baking Calculator & Recipe Manager - Scale Your Recipes Perfectly",
+    description:
+      "Professional baking calculator that automatically scales ingredient weights. Adjust servings and get instant gram measurements for perfect baking results.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Baking Calculator & Recipe Manager",
+    description:
+      "Automatically scale ingredient weights based on serving sizes. Perfect measurements every time.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -26,11 +60,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Analytics />
+      <body className={`font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
