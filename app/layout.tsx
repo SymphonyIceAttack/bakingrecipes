@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "gram calculator",
     "cooking",
   ],
-  authors: [{ name: "Baking Calculator" }],
-  creator: "Baking Calculator",
-  publisher: "Baking Calculator",
+  authors: [{ name: "SymphonyIceAttack" }],
+  creator: "SymphonyIceAttack",
+  publisher: "SymphonyIceAttack",
   formatDetection: {
     email: false,
     address: false,
