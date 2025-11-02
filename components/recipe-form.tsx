@@ -70,8 +70,8 @@ export function RecipeForm({
       prepTime: initialValues?.prepTime || 0,
       bakeTime: initialValues?.bakeTime || 0,
       temperature: initialValues?.temperature || 350,
-      servings: initialValues?.servings || 1, // Changed default to number
-      ingredients: initialValues?.ingredients || [{ name: "", weight: 0 }], // Changed to object structure
+      servings: initialValues?.servings || 1,
+      ingredients: initialValues?.ingredients || [{ name: "", weight: 0 }],
       instructions: initialValues?.instructions || [""],
     },
     onSubmit: async ({ value }) => {
@@ -110,7 +110,7 @@ export function RecipeForm({
             e.stopPropagation();
             form.handleSubmit();
           }}
-          className="space-y-8"
+          className="space-y-6 md:space-y-8"
         >
           {/* Basic Information */}
           <div className="space-y-4">
@@ -180,7 +180,7 @@ export function RecipeForm({
           </div>
 
           {/* Time and Temperature */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <form.Field
               name="prepTime"
               validators={{
@@ -320,66 +320,74 @@ export function RecipeForm({
             {(field) => (
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <Label className="text-lg font-semibold">Ingredients</Label>
+                  <Label className="text-base md:text-lg font-semibold">
+                    Ingredients
+                  </Label>
                   <Button
                     type="button"
                     variant="outline"
                     size="sm"
                     onClick={() => field.pushValue({ name: "", weight: 0 })}
-                    className="gap-2 bg-transparent"
+                    className="gap-1 md:gap-2 bg-transparent h-9"
                   >
                     <Plus className="h-4 w-4" />
-                    Add Ingredient
+                    <span className="hidden xs:inline">Add Ingredient</span>
                   </Button>
                 </div>
                 <div className="space-y-3">
                   {field.state.value.map((_, index) => (
-                    <div key={index} className="flex gap-2">
+                    <div
+                      key={index}
+                      className="flex flex-col xs:flex-row gap-2"
+                    >
                       <form.Field name={`ingredients[${index}].name`}>
                         {(subField) => (
-                          <div className="flex-1">
+                          <div className="flex-1 min-w-0">
                             <Input
                               value={subField.state.value}
                               onChange={(e) =>
                                 subField.handleChange(e.target.value)
                               }
                               placeholder="Ingredient name"
+                              className="h-10"
                             />
                           </div>
                         )}
                       </form.Field>
-                      <form.Field name={`ingredients[${index}].weight`}>
-                        {(subField) => (
-                          <div className="flex items-center gap-2">
-                            <Input
-                              type="number"
-                              step="0.1"
-                              min="0"
-                              value={subField.state.value}
-                              onChange={(e) =>
-                                subField.handleChange(Number(e.target.value))
-                              }
-                              placeholder="Weight"
-                              className="w-24"
-                            />
-                            <span className="text-sm text-muted-foreground font-medium">
-                              g
-                            </span>
-                          </div>
+                      <div className="flex gap-2">
+                        <form.Field name={`ingredients[${index}].weight`}>
+                          {(subField) => (
+                            <div className="flex items-center gap-2 flex-1 xs:flex-initial">
+                              <Input
+                                type="number"
+                                step="0.1"
+                                min="0"
+                                value={subField.state.value}
+                                onChange={(e) =>
+                                  subField.handleChange(Number(e.target.value))
+                                }
+                                placeholder="Weight"
+                                className="w-full xs:w-28 h-10"
+                              />
+                              <span className="text-sm text-muted-foreground font-medium whitespace-nowrap">
+                                g
+                              </span>
+                            </div>
+                          )}
+                        </form.Field>
+                        {field.state.value.length > 1 && (
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => field.removeValue(index)}
+                            className="shrink-0 h-10 w-10"
+                          >
+                            <X className="h-4 w-4" />
+                            <span className="sr-only">Remove ingredient</span>
+                          </Button>
                         )}
-                      </form.Field>
-                      {field.state.value.length > 1 && (
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="icon"
-                          onClick={() => field.removeValue(index)}
-                          className="shrink-0"
-                        >
-                          <X className="h-4 w-4" />
-                          <span className="sr-only">Remove ingredient</span>
-                        </Button>
-                      )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -392,16 +400,18 @@ export function RecipeForm({
             {(field) => (
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <Label className="text-lg font-semibold">Instructions</Label>
+                  <Label className="text-base md:text-lg font-semibold">
+                    Instructions
+                  </Label>
                   <Button
                     type="button"
                     variant="outline"
                     size="sm"
                     onClick={() => field.pushValue("")}
-                    className="gap-2 bg-transparent"
+                    className="gap-1 md:gap-2 bg-transparent h-9"
                   >
                     <Plus className="h-4 w-4" />
-                    Add Step
+                    <span className="hidden xs:inline">Add Step</span>
                   </Button>
                 </div>
                 <div className="space-y-3">
@@ -429,7 +439,7 @@ export function RecipeForm({
                               variant="ghost"
                               size="icon"
                               onClick={() => field.removeValue(index)}
-                              className="shrink-0"
+                              className="shrink-0 h-10 w-10"
                             >
                               <X className="h-4 w-4" />
                               <span className="sr-only">Remove step</span>
@@ -446,7 +456,11 @@ export function RecipeForm({
 
           {/* Submit Button */}
           <div className="flex justify-end pt-4">
-            <Button type="submit" size="lg" className="w-full md:w-auto">
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full sm:w-auto h-11 md:h-12"
+            >
               {mode === "edit" ? "Update Recipe" : "Save Recipe"}
             </Button>
           </div>

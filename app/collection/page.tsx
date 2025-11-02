@@ -64,25 +64,29 @@ export default function CollectionPage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border bg-card">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <div className="container mx-auto px-4 py-4 md:py-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex items-center gap-3 md:gap-4">
               <Link href="/">
-                <Button variant="ghost" size="icon">
-                  <ArrowLeft className="h-5 w-5" />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9 md:h-10 md:w-10"
+                >
+                  <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
                 </Button>
               </Link>
               <div>
-                <h1 className="text-3xl font-bold text-foreground">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                   My Recipe Collection
                 </h1>
-                <p className="text-muted-foreground mt-1">
+                <p className="text-sm md:text-base text-muted-foreground mt-0.5 md:mt-1">
                   {recipes.length} delicious recipes
                 </p>
               </div>
             </div>
-            <Link href="/recipes">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Link href="/recipes" className="w-full sm:w-auto">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto h-11">
                 <ChefHat className="mr-2 h-4 w-4" />
                 Add New Recipe
               </Button>
@@ -92,8 +96,8 @@ export default function CollectionPage() {
       </header>
 
       {/* Recipe Grid */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <main className="container mx-auto px-4 py-6 md:py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {recipes.map((recipe) => (
             <Card
               key={recipe.id}
@@ -109,8 +113,8 @@ export default function CollectionPage() {
                   />
                 </div>
               </CardHeader>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2 text-balance">
+              <CardContent className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 text-balance">
                   {recipe.name}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
@@ -131,7 +135,7 @@ export default function CollectionPage() {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="p-6 pt-0 flex flex-col gap-3">
+              <CardFooter className="p-4 md:p-6 pt-0 flex flex-col gap-2 md:gap-3">
                 <div className="flex justify-between items-center w-full">
                   <span className="text-sm text-muted-foreground">
                     Serves {recipe.servings}
@@ -141,33 +145,35 @@ export default function CollectionPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent"
+                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent h-9 flex items-center justify-center"
                       >
-                        <Eye className="mr-1.5 h-4 w-4" />
-                        查看
+                        <Eye className="h-4 w-4 md:mr-1.5" />
+                        <span className="hidden md:inline">查看</span>
                       </Button>
                     </Link>
                     <Link href={`/recipes/${recipe.id}/edit`}>
                       <Button
                         variant="outline"
                         size="sm"
-                        className="group-hover:bg-accent group-hover:text-accent-foreground transition-colors bg-transparent"
+                        className="group-hover:bg-accent group-hover:text-accent-foreground transition-colors bg-transparent h-9 flex items-center justify-center"
                       >
-                        <Pencil className="mr-1.5 h-4 w-4" />
-                        更新
+                        <Pencil className="h-4 w-4 md:mr-1.5" />
+                        <span className="hidden md:inline">更新</span>
                       </Button>
                     </Link>
                   </div>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handleDeleteClick(recipe.id, recipe.name)}
-                  className="w-full text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors"
-                >
-                  <Trash2 className="mr-1.5 h-4 w-4" />
-                  删除食谱
-                </Button>
+                <div className="flex justify-end w-full">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleDeleteClick(recipe.id, recipe.name)}
+                    className="text-destructive hover:bg-destructive hover:text-destructive-foreground transition-colors h-9 flex items-center justify-center gap-1.5 px-4"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                    删除食谱
+                  </Button>
+                </div>
               </CardFooter>
             </Card>
           ))}

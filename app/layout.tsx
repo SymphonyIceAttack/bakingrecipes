@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type React from "react";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
     "gram calculator",
     "cooking",
   ],
-  authors: [{ name: "SymphonyIceAttack" }],
-  creator: "SymphonyIceAttack",
-  publisher: "SymphonyIceAttack",
+  authors: [{ name: "SymphoneIceAttack" }],
+  creator: "SymphoneIceAttack",
+  publisher: "SymphoneIceAttack",
   formatDetection: {
     email: false,
     address: false,
@@ -63,6 +64,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
+        <Toaster />
       </body>
     </html>
   );

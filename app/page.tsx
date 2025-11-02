@@ -6,28 +6,32 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 md:py-32">
+      <section className="relative py-12 px-4 md:py-20 lg:py-32">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
               <ChefHat className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-balance mb-6 text-foreground">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-balance mb-4 md:mb-6 text-foreground">
               Baking Calculator & Recipe Manager
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground text-pretty mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-pretty mb-6 md:mb-8 leading-relaxed">
               Automatically scale ingredient weights for any serving size.
               Perfect measurements, perfect results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="text-lg px-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="text-base sm:text-lg px-6 sm:px-8 py-3"
+              >
                 <Link href="/collection">View Collection</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 bg-transparent"
+                className="text-base sm:text-lg px-6 sm:px-8 py-3 bg-transparent"
               >
                 <Link href="/recipes">Add Recipe</Link>
               </Button>
@@ -37,12 +41,12 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-12 md:py-20 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-balance">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 text-balance">
             Everything you need for perfect baking
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <Calculator className="w-7 h-7 text-primary" />
@@ -82,16 +86,20 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 md:py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-balance">
             Ready to bake with perfect measurements?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 text-pretty">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-6 md:mb-8 text-pretty">
             Start using the baking calculator today and never worry about
             scaling recipes again
           </p>
-          <Button asChild size="lg" className="text-lg px-8">
+          <Button
+            asChild
+            size="lg"
+            className="text-base sm:text-lg px-6 sm:px-8 py-3"
+          >
             <Link href="/collection">Get Started</Link>
           </Button>
         </div>
