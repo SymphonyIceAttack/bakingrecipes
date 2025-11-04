@@ -11,7 +11,7 @@ import {
 import directus from "@/lib/directus";
 
 export const metadata: Metadata = {
-  title: "Blog - Fancy Text Generator",
+  title: "Blog - Baking Recipes ",
   description: "Read our latest articles and updates",
 };
 
