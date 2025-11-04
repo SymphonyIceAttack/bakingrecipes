@@ -5,6 +5,30 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <main className="min-h-screen">
+      {/* Navigation Header */}
+      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link
+              href="/"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                <ChefHat className="w-5 h-5 text-primary" />
+              </div>
+              <span className="font-bold text-lg hidden sm:inline">
+                Baking Calculator
+              </span>
+            </Link>
+            <div className="flex items-center gap-4">
+              <Button asChild variant="ghost" className="text-base">
+                <Link href="/blog">Blog</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative py-12 px-4 md:py-20 lg:py-32">
         <div className="max-w-6xl mx-auto">
