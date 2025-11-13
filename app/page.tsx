@@ -1,5 +1,6 @@
 import { BookOpen, Calculator, ChefHat, Clock } from "lucide-react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -20,10 +21,11 @@ export default function Home() {
                 Baking Calculator
               </span>
             </Link>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <Button asChild variant="ghost" className="text-base">
                 <Link href="/blog">Blog</Link>
               </Button>
+              <ThemeToggle />
             </div>
           </div>
         </div>
