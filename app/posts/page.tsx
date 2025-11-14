@@ -12,8 +12,13 @@ import {
 import directus from "@/lib/directus";
 
 export const metadata: Metadata = {
-  title: "Posts - Fancy Text Generator",
-  description: "Read our latest articles and updates",
+  title: {
+    default:
+      "Baking Calculator & Recipe Manager - Scale Your Recipes Perfectly",
+    template: "%s | Baking Calculator",
+  },
+  description:
+    "Professional baking calculator that automatically scales ingredient weights based on serving sizes. Manage your baking recipes with precision - adjust servings and get instant gram measurements for perfect results every time.",
 };
 
 export const revalidate = 86400;
