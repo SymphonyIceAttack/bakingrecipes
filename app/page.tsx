@@ -29,7 +29,7 @@ export default function Home() {
             </Link>
             <div className="flex items-center gap-2 sm:gap-4">
               <Button asChild variant="ghost" className="text-base">
-                <Link href="/blog">Blog</Link>
+                <Link href="/posts">Blog</Link>
               </Button>
               <ThemeToggle />
             </div>
