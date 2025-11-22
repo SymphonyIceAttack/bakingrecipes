@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL("https://www.bakingrecipes.top"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Baking Calculator & Recipe Manager - Scale Your Recipes Perfectly",
     description:
