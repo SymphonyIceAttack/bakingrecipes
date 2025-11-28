@@ -289,14 +289,21 @@ export default function RecipeDetailPage() {
       </main>
 
       <div className="fixed -left-[9999px] -top-[9999px]">
-        <div ref={exportCardRef} className="w-[800px] bg-white p-8">
+        <div
+          ref={exportCardRef}
+          className="w-[800px] bg-white p-8"
+          style={{ color: "#1f2937" }}
+        >
           <div className="border-4 border-primary rounded-lg p-8">
             {/* Header */}
             <div className="text-center mb-6 pb-6 border-b-2 border-primary/20">
-              <h1 className="text-4xl font-bold text-foreground mb-2">
+              <h1
+                className="text-4xl font-bold mb-2"
+                style={{ color: "#1f2937" }}
+              >
                 {recipe.name}
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg" style={{ color: "#6b7280" }}>
                 {recipe.description}
               </p>
               <div className="mt-4 inline-block bg-primary/10 px-4 py-2 rounded-full">
@@ -309,27 +316,33 @@ export default function RecipeDetailPage() {
             {/* Recipe Info */}
             <div className="grid grid-cols-4 gap-4 mb-6 pb-6 border-b-2 border-primary/20">
               <div className="text-center">
-                <p className="text-sm text-muted-foreground mb-1">Prep Time</p>
-                <p className="text-xl font-bold text-foreground">
+                <p className="text-sm mb-1" style={{ color: "#6b7280" }}>
+                  Prep Time
+                </p>
+                <p className="text-xl font-bold" style={{ color: "#1f2937" }}>
                   {recipe.prepTime} min
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-sm text-muted-foreground mb-1">Bake Time</p>
-                <p className="text-xl font-bold text-foreground">
+                <p className="text-sm mb-1" style={{ color: "#6b7280" }}>
+                  Bake Time
+                </p>
+                <p className="text-xl font-bold" style={{ color: "#1f2937" }}>
                   {recipe.bakeTime} min
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-sm text-muted-foreground mb-1">
+                <p className="text-sm mb-1" style={{ color: "#6b7280" }}>
                   Temperature
                 </p>
-                <p className="text-xl font-bold text-foreground">
+                <p className="text-xl font-bold" style={{ color: "#1f2937" }}>
                   {recipe.temperature}°F
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-sm text-muted-foreground mb-1">Servings</p>
+                <p className="text-sm mb-1" style={{ color: "#6b7280" }}>
+                  Servings
+                </p>
                 <p className="text-xl font-bold text-primary">
                   {targetServings}
                 </p>
@@ -338,7 +351,10 @@ export default function RecipeDetailPage() {
 
             {/* Ingredients */}
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+              <h2
+                className="text-2xl font-bold mb-4 flex items-center gap-2"
+                style={{ color: "#1f2937" }}
+              >
                 <span className="w-2 h-8 bg-primary rounded"></span>
                 Ingredients ({targetServings} servings)
               </h2>
@@ -353,7 +369,10 @@ export default function RecipeDetailPage() {
                         key={index}
                         className="flex justify-between items-center py-2 border-b border-primary/10 last:border-0"
                       >
-                        <span className="text-foreground font-medium">
+                        <span
+                          className="font-medium"
+                          style={{ color: "#1f2937" }}
+                        >
                           {ingredient.name}
                         </span>
                         <span className="font-bold text-primary">
@@ -368,7 +387,10 @@ export default function RecipeDetailPage() {
 
             {/* Instructions */}
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+              <h2
+                className="text-2xl font-bold mb-4 flex items-center gap-2"
+                style={{ color: "#1f2937" }}
+              >
                 <span className="w-2 h-8 bg-primary rounded"></span>
                 Instructions
               </h2>
@@ -378,7 +400,9 @@ export default function RecipeDetailPage() {
                     <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">
                       {index + 1}
                     </span>
-                    <p className="text-foreground pt-1">{instruction}</p>
+                    <p className="pt-1" style={{ color: "#1f2937" }}>
+                      {instruction}
+                    </p>
                   </li>
                 ))}
               </ol>
@@ -386,7 +410,7 @@ export default function RecipeDetailPage() {
 
             {/* Footer */}
             <div className="mt-8 pt-6 border-t-2 border-primary/20 text-center">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm" style={{ color: "#6b7280" }}>
                 Created with Baking Calculator
               </p>
             </div>

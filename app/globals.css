@@ -5,76 +5,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light mode: Vibrant gradient from warm coral to soft peach with energetic accents */
-  --background: oklch(0.96 0.04 15);
-  --foreground: oklch(0.15 0.02 280);
-  --card: oklch(0.99 0.01 20);
-  --card-foreground: oklch(0.15 0.02 280);
-  --popover: oklch(0.99 0.01 20);
-  --popover-foreground: oklch(0.15 0.02 280);
-  --primary: oklch(0.55 0.22 260);
-  --primary-foreground: oklch(0.99 0.01 20);
-  --secondary: oklch(0.92 0.05 15);
-  --secondary-foreground: oklch(0.15 0.02 280);
-  --muted: oklch(0.94 0.03 20);
-  --muted-foreground: oklch(0.45 0.02 270);
-  --accent: oklch(0.65 0.18 340);
-  --accent-foreground: oklch(0.99 0.01 20);
+  /* Light mode: Warm baking theme - cream, caramel, and chocolate tones */
+  --background: oklch(0.97 0.03 50);
+  --foreground: oklch(0.25 0.07 25);
+  --card: oklch(0.99 0.02 45);
+  --card-foreground: oklch(0.25 0.07 25);
+  --popover: oklch(0.99 0.02 45);
+  --popover-foreground: oklch(0.25 0.07 25);
+  --primary: oklch(0.48 0.18 30);
+  --primary-foreground: oklch(0.99 0.01 50);
+  --secondary: oklch(0.92 0.08 45);
+  --secondary-foreground: oklch(0.25 0.07 25);
+  --muted: oklch(0.94 0.05 48);
+  --muted-foreground: oklch(0.48 0.08 30);
+  --accent: oklch(0.52 0.16 350);
+  --accent-foreground: oklch(0.99 0.01 50);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0.01 20);
-  --border: oklch(0.88 0.04 15);
-  --input: oklch(0.88 0.04 15);
-  --ring: oklch(0.55 0.22 260);
-  --chart-1: oklch(0.55 0.22 260);
-  --chart-2: oklch(0.65 0.18 340);
-  --chart-3: oklch(0.6 0.2 30);
-  --chart-4: oklch(0.7 0.15 180);
-  --chart-5: oklch(0.5 0.18 120);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.99 0.01 20);
-  --sidebar-foreground: oklch(0.15 0.02 280);
-  --sidebar-primary: oklch(0.55 0.22 260);
-  --sidebar-primary-foreground: oklch(0.99 0.01 20);
-  --sidebar-accent: oklch(0.96 0.04 15);
-  --sidebar-accent-foreground: oklch(0.15 0.02 280);
-  --sidebar-border: oklch(0.9 0.04 15);
-  --sidebar-ring: oklch(0.55 0.22 260);
+  --destructive-foreground: oklch(0.99 0.01 50);
+  --border: oklch(0.85 0.06 42);
+  --input: oklch(0.88 0.05 45);
+  --ring: oklch(0.48 0.18 30);
+  --chart-1: oklch(0.48 0.18 30);
+  --chart-2: oklch(0.52 0.16 350);
+  --chart-3: oklch(0.58 0.12 48);
+  --chart-4: oklch(0.45 0.15 35);
+  --chart-5: oklch(0.5 0.18 25);
+  --radius: 1rem;
+  --sidebar: oklch(0.99 0.02 45);
+  --sidebar-foreground: oklch(0.25 0.07 25);
+  --sidebar-primary: oklch(0.48 0.18 30);
+  --sidebar-primary-foreground: oklch(0.99 0.01 50);
+  --sidebar-accent: oklch(0.97 0.03 50);
+  --sidebar-accent-foreground: oklch(0.25 0.07 25);
+  --sidebar-border: oklch(0.85 0.06 42);
+  --sidebar-ring: oklch(0.48 0.18 30);
 }
 
 .dark {
-  /* Dark mode: Deep gradient from midnight blue to purple with vibrant neon accents */
-  --background: oklch(0.15 0.03 260);
-  --foreground: oklch(0.95 0.02 20);
-  --card: oklch(0.2 0.04 270);
-  --card-foreground: oklch(0.95 0.02 20);
-  --popover: oklch(0.2 0.04 270);
-  --popover-foreground: oklch(0.95 0.02 20);
-  --primary: oklch(0.65 0.25 280);
-  --primary-foreground: oklch(0.15 0.03 260);
-  --secondary: oklch(0.25 0.04 265);
-  --secondary-foreground: oklch(0.95 0.02 20);
-  --muted: oklch(0.25 0.04 265);
-  --muted-foreground: oklch(0.65 0.03 270);
-  --accent: oklch(0.7 0.22 320);
-  --accent-foreground: oklch(0.15 0.03 260);
+  /* Dark mode: Rich chocolate and coffee tones with warm highlights */
+  --background: oklch(0.12 0.03 28);
+  --foreground: oklch(0.92 0.04 48);
+  --card: oklch(0.16 0.04 30);
+  --card-foreground: oklch(0.92 0.04 48);
+  --popover: oklch(0.16 0.04 30);
+  --popover-foreground: oklch(0.92 0.04 48);
+  --primary: oklch(0.58 0.2 32);
+  --primary-foreground: oklch(0.15 0.04 28);
+  --secondary: oklch(0.22 0.05 35);
+  --secondary-foreground: oklch(0.92 0.04 48);
+  --muted: oklch(0.2 0.04 32);
+  --muted-foreground: oklch(0.65 0.08 38);
+  --accent: oklch(0.62 0.18 352);
+  --accent-foreground: oklch(0.15 0.04 28);
   --destructive: oklch(0.65 0.28 25);
-  --destructive-foreground: oklch(0.95 0.02 20);
-  --border: oklch(0.3 0.04 270);
-  --input: oklch(0.3 0.04 270);
-  --ring: oklch(0.65 0.25 280);
-  --chart-1: oklch(0.65 0.25 280);
-  --chart-2: oklch(0.7 0.22 320);
-  --chart-3: oklch(0.68 0.25 40);
-  --chart-4: oklch(0.72 0.2 180);
-  --chart-5: oklch(0.6 0.22 140);
-  --sidebar: oklch(0.18 0.04 265);
-  --sidebar-foreground: oklch(0.95 0.02 20);
-  --sidebar-primary: oklch(0.65 0.25 280);
-  --sidebar-primary-foreground: oklch(0.95 0.02 20);
-  --sidebar-accent: oklch(0.25 0.04 265);
-  --sidebar-accent-foreground: oklch(0.95 0.02 20);
-  --sidebar-border: oklch(0.28 0.04 270);
-  --sidebar-ring: oklch(0.65 0.25 280);
+  --destructive-foreground: oklch(0.92 0.04 48);
+  --border: oklch(0.28 0.05 34);
+  --input: oklch(0.28 0.05 34);
+  --ring: oklch(0.58 0.2 32);
+  --chart-1: oklch(0.58 0.2 32);
+  --chart-2: oklch(0.62 0.18 352);
+  --chart-3: oklch(0.65 0.15 38);
+  --chart-4: oklch(0.55 0.18 35);
+  --chart-5: oklch(0.6 0.2 28);
+  --sidebar: oklch(0.16 0.04 30);
+  --sidebar-foreground: oklch(0.92 0.04 48);
+  --sidebar-primary: oklch(0.58 0.2 32);
+  --sidebar-primary-foreground: oklch(0.15 0.04 28);
+  --sidebar-accent: oklch(0.2 0.04 32);
+  --sidebar-accent-foreground: oklch(0.92 0.04 48);
+  --sidebar-border: oklch(0.28 0.05 34);
+  --sidebar-ring: oklch(0.58 0.2 32);
 }
 
 @theme inline {
@@ -124,16 +124,16 @@
     @apply border-border outline-ring/50;
   }
 
-  /* Adding vibrant gradient backgrounds for both light and dark modes */
+  /* Warm baking-themed gradient backgrounds */
   body {
     @apply text-foreground;
     background: linear-gradient(
       135deg,
-      oklch(0.96 0.06 20) 0%,
-      oklch(0.95 0.08 30) 25%,
-      oklch(0.94 0.1 340) 50%,
-      oklch(0.96 0.07 280) 75%,
-      oklch(0.97 0.05 260) 100%
+      oklch(0.97 0.05 50) 0%,
+      oklch(0.96 0.08 48) 25%,
+      oklch(0.95 0.1 45) 50%,
+      oklch(0.96 0.07 52) 75%,
+      oklch(0.97 0.05 55) 100%
     );
     background-attachment: fixed;
     min-height: 100vh;
@@ -142,11 +142,11 @@
   .dark body {
     background: linear-gradient(
       135deg,
-      oklch(0.12 0.06 280) 0%,
-      oklch(0.15 0.08 300) 25%,
-      oklch(0.13 0.1 320) 50%,
-      oklch(0.14 0.07 270) 75%,
-      oklch(0.16 0.05 290) 100%
+      oklch(0.1 0.04 28) 0%,
+      oklch(0.13 0.06 30) 25%,
+      oklch(0.11 0.08 32) 50%,
+      oklch(0.14 0.05 35) 75%,
+      oklch(0.15 0.04 38) 100%
     );
     background-attachment: fixed;
     min-height: 100vh;

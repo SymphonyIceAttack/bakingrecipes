@@ -51,21 +51,21 @@ export default async function BlogPage() {
     return (
       <>
         <SiteNav />
-        <main className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900 py-12 px-4">
+        <main className="min-h-screen bg-background py-12 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-5xl font-bold mb-4 text-balance text-gray-900 dark:text-white">
+              <h1 className="text-5xl font-bold mb-4 text-balance text-foreground">
                 Blog Posts
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 text-pretty">
+              <p className="text-xl text-muted-foreground text-pretty">
                 Explore our latest articles and updates
               </p>
             </div>
 
             {posts.length === 0 ? (
-              <Card className="border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-slate-950">
+              <Card className="border-2 border-border">
                 <CardContent className="py-12 text-center">
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-muted-foreground">
                     No posts published yet
                   </p>
                 </CardContent>
@@ -78,12 +78,12 @@ export default async function BlogPage() {
                     href={`/posts/${post.slug}`}
                     className="group"
                   >
-                    <Card className="h-full transition-all hover:shadow-lg hover:border-purple-500 border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-slate-950">
+                    <Card className="h-full transition-all hover:shadow-lg hover:border-primary border-2 border-border">
                       <CardHeader>
-                        <CardTitle className="text-2xl group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors text-balance text-gray-900 dark:text-white">
+                        <CardTitle className="text-2xl group-hover:text-primary transition-colors text-balance text-foreground">
                           {post.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-500 dark:text-gray-500">
+                        <CardDescription className="text-muted-foreground">
                           {new Date(post.published_at).toLocaleDateString(
                             "en-US",
                             {
@@ -95,7 +95,7 @@ export default async function BlogPage() {
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-600 dark:text-gray-400 line-clamp-3 text-pretty">
+                        <p className="text-muted-foreground line-clamp-3 text-pretty">
                           {post.description}
                         </p>
                       </CardContent>
@@ -120,18 +120,18 @@ export default async function BlogPage() {
     return (
       <>
         <SiteNav />
-        <main className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-purple-950 dark:to-slate-900 py-12 px-4">
+        <main className="min-h-screen bg-background py-12 px-4">
           <div className="max-w-6xl mx-auto">
-            <Card className="border-2 border-red-500 dark:border-red-600 bg-white dark:bg-slate-950">
+            <Card className="border-2 border-destructive">
               <CardContent className="py-12 text-center space-y-4">
-                <p className="text-red-600 dark:text-red-500 font-semibold">
+                <p className="text-destructive font-semibold">
                   Error loading posts
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-muted-foreground">
                   {error instanceof Error ? error.message : "Unknown error"}
                 </p>
                 {!process.env.NEXT_PUBLIC_DIRECTUS_URL && (
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm text-muted-foreground">
                     Please check if NEXT_PUBLIC_DIRECTUS_URL environment
                     variable is set
                   </p>

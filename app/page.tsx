@@ -1,41 +1,12 @@
 import { BookOpen, Calculator, ChefHat, Clock } from "lucide-react";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Navigation Header */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-            >
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
-                <ChefHat className="w-5 h-5 text-primary" />
-              </div>
-              <span className="font-bold text-lg hidden sm:inline">
-                Baking Calculator
-              </span>
-            </Link>
-            <div className="flex items-center gap-2 sm:gap-4">
-              <Button asChild variant="ghost" className="text-base">
-                <Link href="/posts">Blog</Link>
-              </Button>
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <BreadcrumbNav />
 
       {/* Hero Section */}
       <section className="relative py-12 px-4 md:py-20 lg:py-32">
@@ -114,100 +85,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-12 md:py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 text-balance">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-muted-foreground text-center mb-8 md:mb-12 text-pretty">
-            Everything you need to know about the Baking Calculator
-          </p>
-
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem
-              value="item-1"
-              className="bg-background/50 backdrop-blur border rounded-lg px-6"
-            >
-              <AccordionTrigger className="text-left text-base sm:text-lg font-semibold hover:no-underline">
-                How does the baking calculator work?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                The baking calculator automatically scales ingredient weights
-                based on your desired serving size. When you input a recipe with
-                ingredients measured in grams, you can specify how many servings
-                the original recipe makes. Then, when viewing the recipe, simply
-                enter your target serving size and all ingredient weights will
-                be calculated proportionally.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem
-              value="item-2"
-              className="bg-background/50 backdrop-blur border rounded-lg px-6"
-            >
-              <AccordionTrigger className="text-left text-base sm:text-lg font-semibold hover:no-underline">
-                Why should I measure ingredients in grams?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                Measuring by weight (grams) is the most accurate method for
-                baking. Unlike volume measurements (cups, tablespoons), weight
-                measurements are consistent and precise, leading to more
-                reliable results. This is especially important when scaling
-                recipes, as proportions remain exact.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem
-              value="item-3"
-              className="bg-background/50 backdrop-blur border rounded-lg px-6"
-            >
-              <AccordionTrigger className="text-left text-base sm:text-lg font-semibold hover:no-underline">
-                Can I export my recipes?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                Yes! Each recipe has an export feature that allows you to
-                download a beautifully formatted image of your recipe, including
-                all ingredients (scaled to your chosen serving size),
-                instructions, and baking details. Perfect for sharing or
-                printing.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem
-              value="item-4"
-              className="bg-background/50 backdrop-blur border rounded-lg px-6"
-            >
-              <AccordionTrigger className="text-left text-base sm:text-lg font-semibold hover:no-underline">
-                Where are my recipes stored?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                All your recipes are stored locally in your browser's storage.
-                This means your data stays private and accessible even when
-                offline. However, if you clear your browser data, your recipes
-                will be deleted, so consider exporting important recipes as
-                images for backup.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem
-              value="item-5"
-              className="bg-background/50 backdrop-blur border rounded-lg px-6"
-            >
-              <AccordionTrigger className="text-left text-base sm:text-lg font-semibold hover:no-underline">
-                Can I edit recipes after creating them?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                Each recipe in your collection has an "Update" button that lets
-                you edit any detail - ingredients, weights, instructions, times,
-                or temperatures. Your changes are saved automatically to your
-                browser's local storage.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </div>
       </section>
 
