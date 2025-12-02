@@ -21,13 +21,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Styling**: Tailwind CSS v4 with PostCSS
 - **Components**: Radix UI primitives with shadcn/ui
 - **Linting/Formatting**: Biome (not ESLint/Prettier)
-- **Package Manager**: pnpm
+- **Package Manager**: pnpm (required - do not use npm or yarn)
 - **CMS**: Directus for blog posts (configured in lib/directus.ts)
 - **Deployment**: Vercel (Vercel Analytics enabled)
 
 ## Development Commands
 
+**Important**: This project uses **pnpm** as the package manager. Do not use npm or yarn.
+
 ```bash
+# Install dependencies (run first)
+pnpm install
+
 # Start development server
 pnpm dev
 
@@ -42,9 +47,6 @@ pnpm lint
 
 # Format code with Biome
 pnpm format
-
-# Install dependencies
-pnpm install
 ```
 
 **Note**: This project uses **Biome** instead of ESLint/Prettier. All linting and formatting is handled by Biome, configured in `biome.json`.
