@@ -49,7 +49,8 @@ function discoverRoutes(dir: string, baseDir: string = dir): string[] {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bakingrecipes.top";
 
   try {
     const appDir = join(process.cwd(), "app");

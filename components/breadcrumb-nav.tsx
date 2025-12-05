@@ -1,6 +1,6 @@
 "use client";
 
-import { ChefHat, ChevronRight, Moon, Sun } from "lucide-react";
+import { ChefHat, ChevronRight, Github, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -51,7 +51,7 @@ export function BreadcrumbNav() {
             </div>
           </Link>
 
-          {/* Theme Toggle */}
+          {/* Theme Toggle & GitHub */}
           <div className="flex items-center gap-2">
             <Button
               variant="ghost"
@@ -64,6 +64,21 @@ export function BreadcrumbNav() {
               ) : (
                 <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
               )}
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className="rounded-xl hover:bg-primary/10 transition-all duration-300 h-9 w-9 sm:h-10 sm:w-10"
+            >
+              <a
+                href="https://github.com/SymphonyIceAttack/bakingrecipes"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on GitHub"
+              >
+                <Github className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+              </a>
             </Button>
           </div>
         </div>

@@ -12,12 +12,11 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "Baking Calculator & Recipe Manager - Scale Your Recipes Perfectly",
+    default: "Baking Calculator & Recipe Manager",
     template: "%s | BakingRecipes",
   },
   description:
-    "Professional baking calculator that automatically scales ingredient weights based on serving sizes. Manage your baking recipes with precision - adjust servings and get instant gram measurements for perfect results every time.",
+    "Professional baking calculator that automatically scales ingredient weights. Perfect measurements for any serving size.",
   keywords: [
     "baking calculator",
     "recipe scaler",
@@ -40,21 +39,21 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.bakingrecipes.top"),
+  metadataBase: new URL("https://bakingrecipes.top"),
   alternates: {
-    canonical: "/",
+    canonical: "https://bakingrecipes.top/",
   },
   openGraph: {
-    title: "Baking Calculator & Recipe Manager - Scale Your Recipes Perfectly",
+    title: "Baking Calculator & Recipe Manager",
     description:
-      "Professional baking calculator that automatically scales ingredient weights. Adjust servings and get instant gram measurements for perfect baking results.",
+      "Professional baking calculator that automatically scales ingredient weights. Perfect measurements for any serving size.",
     type: "website",
     locale: "en_US",
-    url: "https://www.bakingrecipes.top",
+    url: "https://bakingrecipes.top",
     siteName: "BakingRecipes",
     images: [
       {
-        url: "/opengraph-image.jpg",
+        url: "https://bakingrecipes.top/opengraph-image.jpg",
         width: 1280,
         height: 720,
         alt: "Baking Calculator & Recipe Manager",
@@ -66,7 +65,7 @@ export const metadata: Metadata = {
     title: "Baking Calculator & Recipe Manager",
     description:
       "Automatically scale ingredient weights based on serving sizes. Perfect measurements every time.",
-    images: ["/twitter-image.jpg"],
+    images: ["https://bakingrecipes.top/twitter-image.jpg"],
     creator: "@bakingrecipes",
   },
   robots: {
