@@ -1,12 +1,33 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About Us | BakingRecipes",
   description:
     "Learn about BakingRecipes - your trusted baking calculator and recipe manager",
+  keywords: [
+    "about bakingrecipes",
+    "baking calculator history",
+    "recipe manager about",
+    "baking tools story",
+  ],
+  openGraph: {
+    title: "About BakingRecipes - Professional Baking Calculator",
+    description:
+      "Learn about our mission to make baking easier with intelligent ingredient scaling and recipe management.",
+    url: "https://bakingrecipes.top/about/",
+    images: [
+      {
+        url: "https://bakingrecipes.top/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About BakingRecipes - Professional Baking Calculator",
+      },
+    ],
+  },
 };
 
 export default function AboutPage() {

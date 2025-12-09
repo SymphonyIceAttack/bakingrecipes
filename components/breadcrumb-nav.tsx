@@ -4,6 +4,7 @@ import { ChefHat, ChevronRight, Github, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
 
 export function BreadcrumbNav() {
@@ -17,6 +18,7 @@ export function BreadcrumbNav() {
   const navItems = [
     { href: "/", label: "Home", isHome: true },
     { href: "/posts", label: "Blog" },
+    { href: "/tutorial", label: "Tutorial" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
@@ -51,7 +53,7 @@ export function BreadcrumbNav() {
             </div>
           </Link>
 
-          {/* Theme Toggle & GitHub */}
+          {/* Theme Toggle, Language Switcher & GitHub */}
           <div className="flex items-center gap-2">
             <Button
               variant="ghost"
@@ -65,6 +67,7 @@ export function BreadcrumbNav() {
                 <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
               )}
             </Button>
+            <LanguageSwitcher />
             <Button
               variant="ghost"
               size="icon"

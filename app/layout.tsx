@@ -5,6 +5,7 @@ import Script from "next/script";
 import type React from "react";
 import { Toaster } from "sonner";
 import "./globals.css";
+import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -39,9 +40,13 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://bakingrecipes.top"),
+  metadataBase: new URL("https://bakingrecipes.top/"),
   alternates: {
     canonical: "https://bakingrecipes.top/",
+    languages: {
+      "en-US": "https://bakingrecipes.top/",
+      en: "https://bakingrecipes.top/",
+    },
   },
   openGraph: {
     title: "Baking Calculator & Recipe Manager",
@@ -49,7 +54,7 @@ export const metadata: Metadata = {
       "Professional baking calculator that automatically scales ingredient weights. Perfect measurements for any serving size.",
     type: "website",
     locale: "en_US",
-    url: "https://bakingrecipes.top",
+    url: "https://bakingrecipes.top/",
     siteName: "BakingRecipes",
     images: [
       {
@@ -67,6 +72,7 @@ export const metadata: Metadata = {
       "Automatically scale ingredient weights based on serving sizes. Perfect measurements every time.",
     images: ["https://bakingrecipes.top/twitter-image.jpg"],
     creator: "@bakingrecipes",
+    site: "@bakingrecipes",
   },
   robots: {
     index: true,
@@ -78,9 +84,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "google-site-verification-code",
   },
   category: "food",
 };
@@ -95,52 +98,26 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://www.bakingrecipes.top/#website",
-        url: "https://www.bakingrecipes.top/",
+        "@id": "https://bakingrecipes.top/#website",
+        url: "https://bakingrecipes.top/",
         name: "BakingRecipes",
         description:
           "Professional baking calculator that automatically scales ingredient weights based on serving sizes",
         publisher: {
           "@type": "Organization",
-          "@id": "https://www.bakingrecipes.top/#organization",
+          "@id": "https://bakingrecipes.top/#organization",
         },
-        potentialAction: [
-          {
-            "@type": "SearchAction",
-            target: {
-              "@type": "EntryPoint",
-              urlTemplate:
-                "https://www.bakingrecipes.top/search?q={search_term_string}",
-            },
-            "query-input": "required name=search_term_string",
-          },
-        ],
       },
       {
         "@type": "Organization",
-        "@id": "https://www.bakingrecipes.top/#organization",
+        "@id": "https://bakingrecipes.top/#organization",
         name: "BakingRecipes",
-        url: "https://www.bakingrecipes.top",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.bakingrecipes.top/logo.png",
-          width: 512,
-          height: 512,
-        },
-        sameAs: [
-          "https://twitter.com/bakingrecipes",
-          "https://github.com/bakingrecipes",
-        ],
-        contactPoint: {
-          "@type": "ContactPoint",
-          contactType: "customer service",
-          email: "contact@bakingrecipes.top",
-        },
+        url: "https://bakingrecipes.top/",
       },
       {
         "@type": "WebApplication",
-        "@id": "https://www.bakingrecipes.top/#webapp",
-        url: "https://www.bakingrecipes.top",
+        "@id": "https://bakingrecipes.top/#webapp",
+        url: "https://bakingrecipes.top/",
         name: "Baking Calculator & Recipe Manager",
         description:
           "Professional baking calculator that automatically scales ingredient weights based on serving sizes",
@@ -158,12 +135,6 @@ export default function RootLayout({
           "Serving size converter",
           "Recipe export to image",
         ],
-        screenshot: "https://www.bakingrecipes.top/screenshot.jpg",
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          ratingCount: "127",
-        },
       },
     ],
   };
@@ -181,6 +152,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <Footer />
         </ThemeProvider>
         <Analytics />
         <Toaster />
