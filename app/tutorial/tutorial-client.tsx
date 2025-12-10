@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
 import {
   BookOpen,
   Calculator,
@@ -14,10 +12,12 @@ import {
   Scale,
   TrendingUp,
 } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 
 const tutorialSteps = [
   {

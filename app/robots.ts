@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/_next/", "/private/"],
+        disallow: ["/api/", "/admin/", "/_next/", "/private/", "/posts/"],
       },
     ],
     sitemap: `${process.env.NEXT_PUBLIC_SITE_URL || "https://bakingrecipes.top"}/sitemap.xml`,
